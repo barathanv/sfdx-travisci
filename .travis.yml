@@ -19,7 +19,7 @@ before_install:
 - sfdx force:auth:jwt:grant --clientid 3MVG9JZ_r.QzrS7hZ1OKVYFzPMBnkAgVxxg_flP9JSiihzW9EIlpleU3ZZqNqUDwsy4ZIfwIO9Apl2fIxMTsE --jwtkeyfile assets/server.key
   --username barathanv@31demo.com --setdefaultdevhubusername -a HubOrg
 script:
-- sfdx force:org:create  -f config/project-scratch-def.json -a ciorg  username=barathanv_dx_004@gmail.com
+- sfdx force:org:create   -f config/project-scratch-def.json -a ciorg  username=barathanv_dx_004@gmail.com
 - sfdx force:org:display -u ciorg
 - sfdx force:source:push -u ciorg
 - sfdx force:apex:test:run -u ciorg --wait 10
